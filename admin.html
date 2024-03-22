@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard Demo</title>
+    <link rel="stylesheet" href="style.css"><!-- 
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"> -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="shortcut icon" href="UBFLogo.png" type="image/x-icon">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"></script>
+
+</head>
+
+<body>
+    <header>
+        <div class=" h-12 "
+            style=" background-color: rgb(79, 121, 66);display: flex;align-items: center;justify-content: space-around ;flex-wrap: wrap;">
+            <span class="text-white  text-center" style="font-family: Poppins;font-size: 0.9rem;"></span>
+            <span class="text-white  text-center" style="font-family: Poppins;font-size: 0.9rem;">UPLOAD CONTENT</span>
+            <span class="text-white  text-center" style="font-family: Poppins;font-size: 0.9rem;"></span>
+
+        </div>
+    </header>
+
+    <style>
+        .flex-container {
+            display: flex;
+            width: 90%;
+            gap: 8px;
+            /* Adjust the gap between pages */
+        }
+
+        .page {
+            flex: 1;
+            max-width: calc(50% - 8px);
+            /* Adjust the maximum width of each page */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .page-section {
+            flex: 1;
+            width: 30%;
+            min-height: 100px;
+            /* Adjust the minimum height of each page section */
+            border: 1px solid #ccc;
+            /* Border color for each page section */
+            background-color: #f2f2f23a;
+            /* Background color for each page section */
+            margin-bottom: 8px;
+            /* Adjust the margin between page sections */
+            position: relative;
+        }
+
+        .sortable-list {
+            min-height: 100%;
+            /* Adjust the minimum height of the sortable list within each page section */
+        }
+
+        .sortable-item {
+            margin-bottom: 8px;
+            /* Adjust the margin between items */
+            resize: both;
+            overflow: auto;
+        }
+    </style>
+
+    <!-- COVERPAGE -->
+
+    <section class="flex flex-row justify-center gap-28 my-8">
+
+        <div class="max-w-md  bg-white p-8 rounded border my-4" style="border-color: rgb(79, 121, 66); width: 30rem;">
+            <h1 class="text-2xl font-semibold mb-4">Upload Cover Page</h1>
+
+            <form action="#" method="post" enctype="multipart/form-data">
+                <!-- Input for selecting an image file -->
+                <div class="mb-4">
+                    <label for="image" class="block text-sm font-medium text-gray-600">Choose an Image</label>
+                    <input type="file" id="image" name="image" accept="image/*"
+                        class="mt-1 p-2 w-full border border-gray-300 rounded focus:outline-none focus:border-green-400">
+                </div>
+
+                <!-- Submit button -->
+                <div>
+                    <button type="submit" style="background-color: rgb(79, 121, 66);"
+                        class="text-white px-4 py-2 rounded hover:bg-green-600 focus:outline-none focus:ring focus:border-green-400">
+                        Upload Cover Page
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Quotation -->
+
+        <div class="max-w-2xl bg-white p-8 rounded border my-4" style="border-color: rgb(79, 121, 66); width: 30rem;">
+            <h1 class="text-2xl font-semibold mb-4">Quotation Uploader</h1>
+
+            <form action="#" method="post">
+                <!-- Input for entering the quotation -->
+                <div class="mb-4">
+                    <label for="quotation" class="block text-sm font-medium text-gray-600">Quotation</label>
+                    <textarea id="quotation" name="quotation" rows="3"
+                        class="mt-1 p-2 w-full border border-gray-300 rounded focus:outline-none focus:border-green-800"
+                        placeholder="Enter the quotation"></textarea>
+                </div>
+
+                <!-- Input for entering the author's name -->
+                <div class="mb-4">
+                    <label for="author" class="block text-sm font-medium text-gray-600">Author's Name</label>
+                    <input type="text" id="author" name="author"
+                        class="mt-1 p-2 w-full border border-gray-300 rounded focus:outline-none focus:border-green-800"
+                        placeholder="Enter the author's name">
+                </div>
+
+                <!-- Submit button -->
+                <div>
+                    <button type="submit" style="background-color: rgb(79, 121, 66);"
+                        class=" text-white px-4 py-2 rounded  focus:outline-none focus:ring focus:border-green-800">
+                        Upload Quotation
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <div class="max-w-md  bg-white p-8 rounded border my-4" style="border-color: rgb(79, 121, 66); width: 30rem;">
+            <h1 class="text-2xl font-semibold mb-4">Upload End Page</h1>
+
+            <form action="#" method="post" enctype="multipart/form-data">
+                <!-- Input for selecting an image file -->
+                <div class="mb-4">
+                    <label for="image" class="block text-sm font-medium text-gray-600">Choose an Image</label>
+                    <input type="file" id="image" name="image" accept="image/*"
+                        class="mt-1 p-2 w-full border border-gray-300 rounded focus:outline-none focus:border-green-400">
+                </div>
+
+                <!-- Submit button -->
+                <div>
+                    <button type="submit" style="background-color: rgb(79, 121, 66);"
+                        class="text-white px-4 py-2 rounded hover:bg-green-600 focus:outline-none focus:ring focus:border-green-400">
+                        Upload End Page
+                    </button>
+                </div>
+            </form>
+        </div>
+
+    </section>
+
+    <!-- Main -->
+    <section>
+        <div class="flex justify-center my-8" style="background-color: rgb(79, 121, 66);">
+            <h1 class="text-xl text-white font-base my-2">First Page Uploader</h1>
+        </div>
+        <!-- Main Content -->
+        <main class="p-4 flex flex-row justify-end">
+
+
+            <!-- Left Sidebar with Buttons -->
+            <div class="mt-4 ">
+                <h2 class="text-xl font-semibold mb-4">Content Types</h2>
+                <div class="flex flex-col gap-2 text-white">
+                    <button class="btn-drag p-4 rounded-sm" data-type="head" draggable="true" style="background-color: rgb(79, 121, 66);">Add Headline</button>
+                    <button class="btn-drag p-4 rounded-sm" data-type="text" draggable="true" style="background-color: rgb(79, 121, 66);">Add Text</button>
+                    <button class="btn-drag p-4 rounded-sm" data-type="video" draggable="true" style="background-color: rgb(79, 121, 66);">Add Video</button>
+                    <button class="btn-drag p-4 rounded-sm" data-type="image" draggable="true" style="background-color: rgb(79, 121, 66);">Add Image</button>
+                </div>
+            </div>
+
+            <div class="flex-container justify-center border ">
+                <!-- Page Divs -->
+                <div id="page1" class="page bg-white p-4 rounded shadow-md" style="width: 100rem; height: 50rem;"
+                    ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <h2 class="text-xl mx-auto font-semibold mb-4">Page 1</h2>
+                    <!-- Sortable Lists for Page 1 Sections -->
+                    <div class="flex-row flex gap-2">
+                        <div class="page-section" data-section="1" style="width: 100rem; height: 45rem;">
+                            <div class="sortable-list" data-page="1" data-section="1">
+                                <!-- Placeholder for content items -->
+                            </div>
+                        </div>
+                        <div class="page-section" data-section="2">
+                            <div class="sortable-list" data-page="1" data-section="2">
+                                <!-- Placeholder for content items -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- <div id="page2" class="page bg-white p-4 rounded shadow-md" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <h2 class="text-xl font-semibold mb-4">Page 2</h2>
+                <div class="page-section" data-section="1">
+                    <div class="sortable-list" data-page="2" data-section="1">
+                    </div>
+                </div>
+                <div class="page-section" data-section="2">
+                    <div class="sortable-list" data-page="2" data-section="2">
+                    </div>
+                </div>
+            </div> -->
+            </div>
+
+            
+        </main>
+        <div class="flex col justify-center my-8" >
+            <h1 class="text-xl text-white font-base my-2 p-4 rounded-md cursor-pointer transform hover:scale-95" style="background-color: rgb(79, 121, 66);"> Upload First Page</h1>
+        </div>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                // Add event listeners to buttons for dragging
+                const dragButtons = document.querySelectorAll('.btn-drag');
+                dragButtons.forEach(button => {
+                    button.addEventListener('dragstart', function (event) {
+                        event.dataTransfer.setData('text/plain', this.dataset.type);
+                    });
+                });
+            });
+
+            // Function to allow dropping on sortable lists
+            function allowDrop(event) {
+                event.preventDefault();
+            }
+
+            // Function to handle the drop event
+            function drop(event) {
+                event.preventDefault();
+                const contentType = event.dataTransfer.getData('text/plain');
+                const newItem = document.createElement('div');
+                newItem.className = 'sortable-item';
+                newItem.draggable = true;
+                newItem.style.width = '500';
+
+                if (contentType === 'text') {
+                    newItem.contentEditable = true;
+                    newItem.style.maxWidth = '23.4rem'
+                } else if (contentType === 'image' || contentType === 'video') {
+                    newItem.className += ' resizable';
+                }
+
+                if (contentType === 'head') {
+                    newItem.contentEditable = true;
+                    newItem.style.color = 'rgb(79, 121, 66)';
+                    newItem.style.fontWeight = 'bold';
+                    newItem.style.fontSize = 'x-large';
+                    newItem.style.maxWidth = '23.4rem'
+                } else if (contentType === 'image' || contentType === 'video') {
+                    newItem.className += ' resizable';
+                }
+
+                newItem.innerHTML = contentType;
+
+                // Append the new item to the sortable list of the target page section
+                const targetSection = event.target.closest('.page-section');
+                const sortableList = targetSection.querySelector('.sortable-list');
+                sortableList.appendChild(newItem);
+
+                // Enable resizable for the added item
+                if (contentType === 'image' || contentType === 'video') {
+                    enableResizable(newItem);
+                    newItem.className += ' resizable';
+                    newItem.style.border = '1px solid #333'; // Add border for image/video div
+                    newItem.style.backgroundColor = 'rgb(79, 121, 66)';
+                    newItem.style.minHeight = '10rem'
+                    newItem.style.maxWidth = '23.4rem'
+                    newItem.style.color = 'white'
+                    newItem.style.paddingLeft = '10rem'
+                    newItem.style.paddingTop = '4rem'
+                }
+            }
+
+            // Function to enable resizable feature for div elements
+            function enableResizable(element) {
+                let isResizing = false;
+                let startX;
+                let startY;
+
+                element.addEventListener('mousedown', function (event) {
+                    isResizing = true;
+                    startX = event.clientX;
+                    startY = event.clientY;
+
+                    document.addEventListener('mousemove', handleMouseMove);
+                    document.addEventListener('mouseup', () => {
+                        isResizing = false;
+                        document.removeEventListener('mousemove', handleMouseMove);
+                    });
+                });
+
+                function handleMouseMove(event) {
+                    if (isResizing) {
+                        const width = element.offsetWidth + (event.clientX - startX);
+                        const height = element.offsetHeight + (event.clientY - startY);
+
+                        element.style.width = `${width}px`;
+                        element.style.height = `${height}px`;
+
+                        startX = event.clientX;
+                        startY = event.clientY;
+                    }
+                }
+            }
+        </script>
+
+    </section>
+
+    <section>
+        <div class="flex justify-center my-8" style="background-color: rgb(79, 121, 66);"><h1 class="text-xl text-white font-base my-2">Previous Uploads</h1></div>
+        <!-- Cards -->
+        <div class="p-8">
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                <!-- Magazine Card 1 -->
+                <div class=" p-4 rounded ">
+                    <div class="aspect-w-3 aspect-h-5 mb-4">
+                        <img src="https://via.placeholder.com/300x500" alt="Magazine Image" class="object-cover rounded">
+                    </div>
+                    <h2 class="text-xl font-semibold mb-2">Magazine Name 1</h2>
+                </div>
+        
+                <!-- Magazine Card 2 -->
+                <div class=" p-4 rounded ">
+                    <div class="aspect-w-3 aspect-h-5 mb-4">
+                        <img src="https://via.placeholder.com/300x500" alt="Magazine Image" class="object-cover rounded">
+                    </div>
+                    <h2 class="text-xl font-semibold mb-2">Magazine Name 2</h2>
+                </div>
+        
+                <!-- Magazine Card 3 -->
+                <div class=" p-4 rounded ">
+                    <div class="aspect-w-3 aspect-h-5 mb-4">
+                        <img src="https://via.placeholder.com/300x500" alt="Magazine Image" class="object-cover rounded">
+                    </div>
+                    <h2 class="text-xl font-semibold mb-2">Magazine Name 3</h2>
+                </div>
+        
+                <!-- Magazine Card 4 -->
+                <div class=" p-4 rounded ">
+                    <div class="aspect-w-3 aspect-h-5 mb-4">
+                        <img src="https://via.placeholder.com/300x500" alt="Magazine Image" class="object-cover rounded">
+                    </div>
+                    <h2 class="text-xl font-semibold mb-2">Magazine Name 4</h2>
+                </div>
+            </div>
+        
+            </div>
+        
+        </div>
+    </section>
+
+
+</body>
+
+</html>

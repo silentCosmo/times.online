@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="shortcut icon" href="UBFLogo.png" type="image/x-icon">
+
+  <title>Magazine Ultimatebliss</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+    @import url('https://fonts.googleapis.com/css2?family=ABeeZee:ital@1&family=Abhaya+Libre&family=Handlee&family=Inter+Tight:wght@100&family=Manrope:wght@300;400&family=Open+Sans:wght@300&family=Poppins:wght@400;500;600&family=Roboto+Mono:wght@200&display=swap');
+
+    .swiper-pagination-instance1 {
+      display: flex;
+      justify-content: center;
+      color: rgb(79, 121, 66);
+    }
+
+    .swiper-button-prev {
+      position: relative;
+      bottom: 11rem;
+      background-color: rgb(79, 121, 66);
+
+      color: white;
+    }
+
+    .swiper-button-next {
+      position: relative;
+      left: 92rem;
+      bottom: 10rem;
+      background-color: rgb(79, 121, 66);
+
+
+      color: white;
+    }
+
+
+    body {
+      background-color: #f0f0f0;
+    }
+
+    #magazine{
+	width: 1250px;
+	height: 820px;
+    cursor: pointer; 
+    margin-left: -10.9rem
+
+    /* 
+  
+    transition: margin-left 0.5s ease-in-out;
+    /* -moz-box-shadow-bottom: 4px 4px 4px black;
+    -webkit-box-shadow-bottom: 4px 4px 4px black;
+    box-shadow: 4px 4px 4px rgba(189, 187, 187, 0.63); */
+}
+#magazine:hover{
+    margin-left: 10.8%;
+}
+
+    /* #myDiv {
+    transition: top 0.3s ease-in-out, left 0.3s ease-in-out;
+  } */
+
+    #magazine .turn-page {
+      border-radius: 4px;
+      border: 1px solid #f0f0f088;
+      background-color: #ffffff;
+      -webkit-user-select: none;
+      /* Safari */
+      -ms-user-select: none;
+      /* IE 10 and IE 11 */
+      user-select: none;
+      /* Standard syntax */
+    }
+
+    #magazine .turn-page .text {
+      display: flex;
+      justify-content: center;
+      margin-top: 5px;
+      margin-bottom: 3px;
+      color: #c7c7c7;
+    }
+
+    #magazine .turn-page .content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #magazine .turn-page .content img {
+      border-radius: 5px;
+    }
+
+    #magazine .turn-page .content iframe {
+      border-radius: 5px;
+    }
+
+    #magazine .turn-page .content p {
+      display: flex;
+      padding: 1.5rem;
+    }
+
+    /* Pre MAG Style */
+
+    #mag {
+      width: 1200px;
+      height: 720px;
+      cursor: pointer;
+      /* -moz-box-shadow-bottom: 4px 4px 4px black;
+    -webkit-box-shadow-bottom: 4px 4px 4px black;
+    box-shadow: 4px 4px 4px rgba(189, 187, 187, 0.63); */
+    }
+
+    #mag .turn-page {
+      border-radius: 4px;
+      border: 1px solid #f0f0f088;
+      background-color: #ffffff;
+      -webkit-user-select: none;
+      /* Safari */
+      -ms-user-select: none;
+      /* IE 10 and IE 11 */
+      user-select: none;
+      /* Standard syntax */
+    }
+
+    #mag .turn-page .text {
+      display: flex;
+      justify-content: center;
+      margin-top: 5px;
+      margin-bottom: 3px;
+      color: #c7c7c7;
+    }
+
+    #mag .turn-page .content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #mag .turn-page .content img {
+      border-radius: 5px;
+    }
+
+    #mag .turn-page .content iframe {
+      border-radius: 5px;
+    }
+
+    #mag .turn-page .content p {
+      display: flex;
+      padding: 1.5rem;
+    }
+
+    /* Buttons */
+
+    #npb:hover {
+      transform: scale(0.8);
+    }
+
+    /* ADMINPANNEL */
+
+    .flex-container {
+      display: flex;
+      gap: 16px;
+      /* Adjust the gap between pages */
+    }
+
+    .page {
+      flex: 1;
+      max-width: calc(50% - 8px);
+      /* Adjust the maximum width of each page */
+    }
+
+    /* Quote Section */
+
+    #quote-container {
+      max-width: 100%;
+      height: 25vh;
+      margin: 20px;
+      text-align: center;
+    }
+
+    .quote {
+      display: none;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .active {
+      display: block;
+      transform: translateX(0);
+    }
+
+    #bar-container {
+      margin-top: 20px;
+      display: flex;
+    }
+
+    .bar {
+      width: 20px;
+      height: 4px;
+      background-color: #beffae94;
+      margin: 0 5px;
+      cursor: pointer;
+    }
+
+  </style>
+  <script>
+    $(function(){
+      $('#header').load('header.html');
+      $('#footer').load('footer.html');
+    })
+  </script>
+</head>
+
+<body>
+
+  <!-- Header -->
+
+  <div id="header"></div>
+
+  <script src="https://unpkg.com/@themesberg/flowbite@1.1.1/dist/flowbite.bundle.js"></script>
+
+  <!-- Read Magazine -->
+  <section id="mgz" class="my-1 "
+    style="background-image: url(https://static.vecteezy.com/system/resources/previews/024/409/662/large_2x/magical-portal-under-an-ancient-stone-arch-located-in-the-jungle-wild-forest-blue-glow-ancient-stone-buildings-cultural-monuments-teleportation-to-parallel-universes-3d-rendering-generate-ai-free-photo.jpg);">
+
+    <div class="flex justify-content justify-evenly text-gray-100 py-1" style="background: #CE03A0;">
+      <div>
+        <i class="fa fa-search-plus" aria-hidden="true"></i>
+      </div>
+      <div>
+        <i class="fa-solid fa-magnifying-glass-minus"></i>
+      </div>
+      <div>
+        <i class="fa-solid fa-volume-high"></i>
+      </div>
+      <div>
+        <i class="fa-solid fa-play"></i>
+      </div>
+      <div>
+        <i class="fa-solid fa-arrow-left"></i>
+      </div>
+
+      <input type="number" placeholder="Page number" class="text-center bg-opacity-40 bg-transparent"
+        onfocus="this.style.outline = 'none';" maxlength="3">
+
+      <div>
+        <i class="fa-solid fa-arrow-right"></i>
+      </div>
+      <div>
+        <i class="fa fa-table" aria-hidden="true"></i>
+      </div>
+      <div>
+        <i class="fa-solid fa-envelope"></i>
+      </div>
+      <div>
+        <i class="fas fa-share"></i>
+      </div>
+
+      <div>
+        <i class="fas fa-expand"></i>
+      </div>
+    </div>
+
+    <script src="turn.js"></script>
+
+    <div
+      class=" justify-start hover:justify-center items-center flex font-bold backdrop-filter backdrop-blur-lg backdrop-brightness-50 py-24">
+
+      <button id="npb" class="text-green-50 absolute left-20 p-3 px-4 rounded-full hover:text-green-100"
+        style="background:#CE03A0;"> <i class="fa-solid fa-less-than"></i></button>
+
+
+      <div class="" id="myDiv">
+
+        <!-- Magazine -->
+
+
+        <div id="magazine">
+
+          <!-- Pages -->
+
+          <div style="background-image: url('Cover\ page\ Ultimate\ Bliss\ Times.webp')"
+            class="bg-no-repeat bg-cover bg-center"><span class="text"></span>
+            <div class="content text-4xl flex items-center mt-18 font-bold">
+              <!-- <h1 class="text-white filter drop-shadow text-6xl">The Ultimate Bliss</h1>
+              <pc class="mt-16">
+                </p>
+                <p
+                  class="text-sm flex text-white font-normal filter drop-shadow bg-black bg-opacity-10 text-justify p-5 mt-96">
+                  Explore the mystical realms of spirituality as we delve into practices that foster a deep connection
+                  with the divine. From ancient traditions to modern interpretations, discover the pathways to spiritual
+                  enlightenment.</p> -->
+            </div>
+          </div>
+
+          <div><span class="text">Page 2 </span>
+            <div class="content">
+              <h1 class="justify-start flex font-bold mt-4">Introduction</h1>
+              <p>Welcome to "The Ultimate Bliss," a magazine dedicated to spiritual exploration, motivation, healing,
+                and
+                therapy. In each issue, we embark on a journey to discover profound insights, uplifting stories, and
+                transformative editorials that nurture the mind, body, and soul.</p> <img
+                src="https://miro.medium.com/v2/resize:fit:4096/1*3mYIJgfwP75nx9A0BbvDxQ.png" width="560" height="315"
+                alt="">
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae eos ipsum sapiente reiciendis
+                excepturi
+                laborum, quis ducimus, aut vel veritatis illum incidunt commodi, maxime mollitia necessitatibus minus?
+              </p>
+            </div>
+          </div>
+
+          <div><span class="text">Page 3 </span>
+            <div class="content">
+              <h1 class="justify-start flex font-bold mt-4">Integrated youtube playback</h1>
+              <p>Ontology Of All Problems and Misery: Freedom from All Problems of Life - Introductory Session</p>
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/q69X1udWov8?si=yPyXe-IH6ey2hCQX"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+              <p>This video is of the introductory session of Swami Aaron’s Master Workshop titled “Ontology of All
+                Problems & Misery: Freedom from All Sufferings of Life”.
+              </p>
+            </div>
+          </div>
+
+          <div><span class="text">Page 4</span>
+            <div class="content">
+              <h1 class="justify-start flex font-bold mt-4">Middle of the Book</h1>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae eos ipsum sapiente reiciendis
+                excepturi
+                laborum, quis ducimus, aut vel veritatis illum incidunt commodi, maxime mollitia necessitatibus minus?
+                Quas,
+                eveniet eaque?</p>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae eos ipsum sapiente reiciendis
+                excepturi
+                laborum, quis ducimus, aut vel veritatis illum incidunt commodi, maxime mollitia necessitatibus minus?
+                Quas,
+                eveniet eaque?</p>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae eos ipsum sapiente reiciendis
+                excepturi
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae eos ipsum sapiente reiciendis
+                excepturi
+                laborum, quis ducimus, aut vel veritatis illum incidunt commodi, maxime mollitia necessitatibus minus?
+                Quas,
+                eveniet eaque?</p>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae eos ipsum sapiente reiciendis
+                excepturi
+                laborum, quis ducimus, aut vel veritatis illum incidunt commodi, maxime mollitia necessitatibus minus?
+                Quas,</p>
+            </div>
+          </div>
+          <div><span class="text">Page 5 </span>
+            <div class="content">
+              <h1 class="justify-start flex font-bold mt-4">The Cat</h1>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae eos ipsum sapiente reiciendis
+                excepturi
+                laborum, quis ducimus, aut vel veritatis illum incidunt commodi, maxime mollitia necessitatibus minus?
+                Quas,
+                eveniet eaque?</p> <img
+                src="https://i.natgeofe.com/n/4cebbf38-5df4-4ed0-864a-4ebeb64d33a4/NationalGeographic_1468962_3x2.jpg?w=1638&h=1092"
+                width="560" height="315" alt="">
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae eos ipsum sapiente reiciendis
+                excepturi
+                laborum, quis ducimus, aut vel veritatis illum incidunt commodi, maxime mollitia necessitatibus minus?
+              </p>
+            </div>
+          </div>
+
+          <div><span class="text">Page 6 </span>
+            <div class="content">
+              <h1 class="justify-start flex font-bold mt-4">Integrated youtube playback</h1>
+              <p>Gain inspiration from an exclusive interview with a motivational speaker. Discover personal anecdotes,
+                success stories, and practical tips for overcoming challenges.</p> <iframe width="560" height="315"
+                src="https://www.youtube.com/embed/uc1r_mW5Qt4?si=ieRy6AfsO7U3aZxp" title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae eos ipsum sapiente reiciendis
+                excepturi
+                laborum, quis ducimus, aut vel veritatis illum incidunt commodi, maxime mollitia necessitatibus minus?
+                Quas,
+                eveniet eaque?</p>
+            </div>
+          </div>
+
+          <div><span class="text">Page 7 </span>
+            <div class="content">
+              <h1 class="justify-start flex font-bold mt-4">Added Support for Website Integration</h1>
+              <p>We can add websites for live preview so user can stay here instead of leaving our magazine</p> <iframe
+                width="560" height="315" src="https://ultimatebliss.org" title="Web Site View" frameborder="0"
+                allowfullscreen></iframe>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae eos ipsum sapiente reiciendis
+                excepturi
+                laborum, quis ducimus, aut vel veritatis illum incidunt commodi, maxime mollitia necessitatibus minus?
+                Quas,
+                eveniet eaque?</p>
+            </div>
+          </div>
+
+          <div
+            style="background-image: url(https://img.freepik.com/premium-photo/end-tunnel-dark-mystical-stairs-fairy-fantasy-forest-digital-illustration-ai_742252-5404.jpg);"
+            class="bg-no-repeat bg-cover bg-center"><span class="text"></span>
+            <div class="content">
+              <h1 class="justify-start flex font-bold mt-4 text-white mt-52">End of Book</h1>
+              <p class="text-white mt-18">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae eos ipsum
+                sapiente reiciendis excepturi
+                laborum, quis ducimus, aut vel veritatis illum incidunt commodi, maxime mollitia necessitatibus minus?
+                Quas,
+                eveniet eaque?</p>
+              <p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae eos ipsum
+                sapiente
+                reiciendis excepturi
+                laborum, quis ducimus, aut vel veritatis illum incidunt commodi, maxime mollitia necessitatibus minus?
+                Quas,
+                eveniet eaque?</p>
+              <p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae eos ipsum
+                sapiente
+                reiciendis excepturi
+                laborum, quis ducimus, aut vel veritatis illum incidunt commodi, maxime mollitia necessitatibus minus?
+                Quas,
+                eveniet eaque?</p>
+            </div>
+          </div>
+        </div>
+
+        <script>
+          $(document).ready(function () {
+            $("#magazine").turn();
+          });
+        </script>
+
+      </div>
+
+      <!-- <script>
+        const myDiv = document.getElementById("myDiv");
+        myDiv.addEventListener("click", () => {
+        myDiv.style.top = "50px"; /* Move the div up */
+        myDiv.style.marginLeft = "18%"; /* Move the div to the left */
+        });
+      </script> -->
+
+
+      <button id="npb" class="text-green-50 absolute right-20 p-3 px-4 rounded-full hover:text-green-100"
+        style="background:#CE03A0 ;"> <i class="fa-solid fa-greater-than"></i></button>
+
+    </div>
+  </section>
+
+  <!-- Quotation -->
+  <section class=" justify-center items-center flex  font-bold text-green-700">
+    <!-- &qint; Quotation Here &qint; -->
+
+    <div class="relative flex flex-col" style="width: 100%;   background-color: #CE03A0;;margin-top: -0.3rem;; ">
+      <div class="absolute inset-x-0 bottom-0">
+        <svg viewBox="0 0 224 12" fill="#f0f0f0" class="w-full -mb-1" preserveAspectRatio="none">
+          <path
+            d="M0,0 C48.8902582,6.27314026 86.2235915,9.40971039 112,9.40971039 C137.776408,9.40971039 175.109742,6.27314026 224,0 L224,12.0441132 L0,12.0441132 L0,0 Z"
+            sty>
+          </path>
+        </svg>
+      </div>
+      <div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+        <div class="relative max-w-2xl sm:mx-auto sm:max-w-xl md:max-w-3xl sm:text-center">
+          <!-- <h2 class="mb-6 font-sans text-3xl text-center font-bold tracking-tight text-white sm:text-4xl sm:leading-none">
+              Inroducing flipbook for elite community
+            </h2> -->
+          <div class="text-green-50" style="    position: relative;
+          left: -31rem;
+          bottom: -6rem;">
+            <img src="swami aaron.webp" class="w-52 rounded-md mx-auto" alt="swami_aaron_thomas">
+            <h1 class="font-medium my-1">Swami Aaron</h1>
+            <h1 class="font-medium my-1">(Dr. Aaron Thomas)</h1>
+            <h1 class="font-medium my-1">Author | Psychotherapist | Spiritual Master</h1>
+          </div>
+
+
+          
+          <div id="quote-container" class="text-green-100" style="    position: relative;
+          top: -10rem;">
+
+            <div class="quote active">
+              <p class="mb-6 text-base text-green-100 md:text-lg whitespace-">
+                <span class="text-2xl">&quot;</span> If you are not blissful, then what is the use of your all knowledge,
+                skills, beliefs, wealth, power, pride, fame, family, society etc.?
+                <br><br>
+                So, come to me. I will teach you how to be free from all problems of
+                mundane life and how to realize the Ultimate Bliss of Existence. <span class="text-2xl">&quot;</span>
+                <br><br>
+                - Swami Aaron (Dr. Aaron Thomas)
+              </p>
+            </div>
+
+            <div class="quote">
+              <p class="mb-6 text-base text-green-100 md:text-lg whitespace-">
+                <span class="text-2xl">&quot;</span> “Which is the biggest happiness you have experienced in your life so far?
+                <br><br>
+                Nothing of the World can match this experience of Pure Pristine Sheer Bliss!” <span class="text-2xl">&quot;</span>
+                <br><br>
+                - Swami Aaron (Dr. Aaron Thomas)
+              </p>
+            </div>
+
+            <div class="quote">
+              <p class="mb-6 text-base text-green-100 md:text-lg whitespace-">
+                <span class="text-2xl">&quot;</span> Almost everyone in this world wants to achieve a life with lots of money, wealth, power, fame, all luxuries, good health, soulful relationship, well-settled children and relatives, world tour and other beautiful experiences.
+                
+                <br><br>
+                - Swami Aaron (Dr. Aaron Thomas)
+              </p>
+            </div>
+            
+            <div class="quote">
+              <p class="mb-6 text-base text-green-100 md:text-lg whitespace-">
+                <span class="text-2xl">&quot;</span> I share that knowledge of beyond this world which can make a person free from mundane problems of life and can facilitate the realisation of Eternal Infinite Life inherent with Ultimate Bliss.
+                
+                <br><br>
+                - Swami Aaron (Dr. Aaron Thomas)
+              </p>
+            </div>
+          </div>
+        
+          <div id="bar-container" class="flex justify-center mb-5">
+            <div class="bar" onclick="showQuote(0)"></div>
+            <div class="bar" onclick="showQuote(1)"></div>
+            <div class="bar" onclick="showQuote(2)"></div>
+            <div class="bar" onclick="showQuote(3)"></div>
+          </div>
+        
+        
+          <script>
+            let currentIndex = 0;
+        
+            function showQuote(index) {
+              // Hide the current active quote
+              document.querySelector('.quote.active').classList.remove('active');
+        
+              // Show the selected quote
+              document.querySelectorAll('.quote')[index].classList.add('active');
+        
+              // Update the currentIndex
+              currentIndex = index;
+            }
+        
+            function changeQuote() {
+              // Increment index and show the next quote
+              currentIndex = (currentIndex + 1) % 4;
+              showQuote(currentIndex);
+            }
+        
+            // Change quote every 5 seconds (adjust as needed)
+            setInterval(changeQuote, 5000);
+          </script>
+
+          <!-- <form class="flex flex-col items-center w-full mb-4 md:flex-row md:px-16">
+                <input placeholder="Search something.." required="" type="text" class="flex-grow w-full h-12 px-4 mb-3 text-white transition duration-200 border-2 border-transparent rounded appearance-none md:mr-2 md:mb-0 bg-deep-purple-900 focus:border-teal-accent-700 focus:outline-none focus:shadow-outline">
+                <a href="/" class="inline-flex items-center justify-center w-full h-12 px-6 font-semibold tracking-wide text-gray-200 transition duration-200 rounded shadow-md md:w-auto hover:text-deep-purple-900 bg-teal-accent-400 hover:bg-teal-accent-700 focus:shadow-outline focus:outline-none">
+                    Search
+                </a>
+            </form> 
+            <p class="max-w-md mb-10 text-xs tracking-wide text-indigo-100 sm:text-sm sm:mx-auto md:mb-16">
+                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque.
+            </p>-->
+
+          <a href="/" aria-label="Scroll down"
+            class="flex items-center justify-center w-10 h-10 mx-auto text-white duration-300 transform border border-gray-400 rounded-full hover:text-teal-accent-400 hover:border-teal-accent-400 hover:shadow hover:scale-110">
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="white">
+              <path
+                d="M10.293,3.293,6,7.586,1.707,3.293A1,1,0,0,0,.293,4.707l5,5a1,1,0,0,0,1.414,0l5-5a1,1,0,1,0-1.414-1.414Z">
+              </path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Previous -->
+
+
+
+  <section class="p-5">
+ 
+    <div >
+      <h1 class=" ml-28 text-4xl font-semibold leading-normal  text-gray-800" style="font-family:poppins;font-size: 2rem;"> PREVIOUS ISSUE</h1>
+      <div class=" ml-28 w-36 h-2 my-4" style="background-color: #CE03A0;"></div>
+      <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+       
+
+        <div class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+          
+          <div class="group relative">
+            <div
+              class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-96 ">
+              <img
+                src="https://www.lifepositive.com/photos/MjAyNC0wMS0wMiAxMTo0MTowOA==_LP%20JAN%20Final%20Cover%202024.jpg"
+                alt="Front of men&#039;s Basic Tee in black."
+                class="h-full w-full object-cover object-center lg:h-full lg:w-full">
+            </div>
+            <div class="mt-4 flex justify-between">
+              <div>
+                <h3 class="text-sm text-gray-700">
+                  <a href="#" class="text-lg font-bold uppercase">
+                    <span aria-hidden="true" class="absolute inset-0 "></span>
+                    Life Positive
+                  </a>
+                </h3>
+                <p class="mt-1 text-sm text-gray-500">Motivation</p>
+              </div>
+              <p class="text-sm font-medium text-green-900 ">Free</p>
+            </div>
+          </div>
+
+          <div class="group relative">
+            <div
+              class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-96 ">
+              <img
+                src="https://yourspiritualrevolution.org/wp-content/uploads/2022/01/web-cover-page.jpg"
+                alt="Front of men&#039;s Basic Tee in black."
+                class="h-full w-full object-cover object-center lg:h-full lg:w-full">
+            </div>
+            <div class="mt-4 flex justify-between">
+              <div>
+                <h3 class="text-sm text-gray-700">
+                  <a href="#" class="text-lg font-bold uppercase">
+                    <span aria-hidden="true" class="absolute inset-0 "></span>
+                    Life Positive
+                  </a>
+                </h3>
+                <p class="mt-1 text-sm text-gray-500">Motivation</p>
+              </div>
+              <p class="text-sm font-medium text-green-900 ">Free</p>
+            </div>
+          </div>
+
+          <div class="group relative">
+            <div
+              class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-96 ">
+              <img
+                src="https://yourspiritualrevolution.org/wp-content/uploads/2021/12/December-2021.jpg"
+                alt="Front of men&#039;s Basic Tee in black."
+                class="h-full w-full object-cover object-center lg:h-full lg:w-full">
+            </div>
+            <div class="mt-4 flex justify-between">
+              <div>
+                <h3 class="text-sm text-gray-700">
+                  <a href="#" class="text-lg font-bold uppercase">
+                    <span aria-hidden="true" class="absolute inset-0 "></span>
+                    Life Positive
+                  </a>
+                </h3>
+                <p class="mt-1 text-sm text-gray-500">Motivation</p>
+              </div>
+              <p class="text-sm font-medium text-green-900 ">Free</p>
+            </div>
+          </div>
+
+          <div class="group relative">
+            <div
+              class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-96 ">
+              <img
+                src="https://yourspiritualrevolution.org/wp-content/uploads/2022/07/YSR-Magazine-Cover-July-2022.jpg"
+                alt="Front of men&#039;s Basic Tee in black."
+                class="h-full w-full object-cover object-center lg:h-full lg:w-full">
+            </div>
+            <div class="mt-4 flex justify-between">
+              <div>
+                <h3 class="text-sm text-gray-700">
+                  <a href="#" class="text-lg font-bold uppercase">
+                    <span aria-hidden="true" class="absolute inset-0 "></span>
+                    Life Positive
+                  </a>
+                </h3>
+                <p class="mt-1 text-sm text-gray-500">Motivation</p>
+              </div>
+              <p class="text-sm font-medium text-green-900 ">Free</p>
+            </div>
+          </div>
+          
+          <div class="group relative">
+            <div
+              class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-96 ">
+              <img
+                src="https://yourspiritualrevolution.org/wp-content/uploads/2022/07/YSR-Magazine-Cover-July-2022.jpg"
+                alt="Front of men&#039;s Basic Tee in black."
+                class="h-full w-full object-cover object-center lg:h-full lg:w-full">
+            </div>
+            <div class="mt-4 flex justify-between">
+              <div>
+                <h3 class="text-sm text-gray-700">
+                  <a href="#" class="text-lg font-bold uppercase">
+                    <span aria-hidden="true" class="absolute inset-0 "></span>
+                    Life Positive
+                  </a>
+                </h3>
+                <p class="mt-1 text-sm text-gray-500">Motivation</p>
+              </div>
+              <p class="text-sm font-medium text-green-900 ">Free</p>
+            </div>
+          </div>
+          <div class="group relative">
+            <div
+              class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-96 ">
+              <img
+                src="https://www.lifepositive.com/photos/MjAyNC0wMS0wMiAxMTo0MTowOA==_LP%20JAN%20Final%20Cover%202024.jpg"
+                alt="Front of men&#039;s Basic Tee in black."
+                class="h-full w-full object-cover object-center lg:h-full lg:w-full">
+            </div>
+            <div class="mt-4 flex justify-between">
+              <div>
+                <h3 class="text-sm text-gray-700">
+                  <a href="#" class="text-lg font-bold uppercase">
+                    <span aria-hidden="true" class="absolute inset-0 "></span>
+                    Life Positive
+                  </a>
+                </h3>
+                <p class="mt-1 text-sm text-gray-500">Motivation</p>
+              </div>
+              <p class="text-sm font-medium text-green-900 ">Free</p>
+            </div>
+          </div>
+          <div class="group relative">
+            <div
+              class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-96 ">
+              <img
+                src="https://www.lifepositive.com/photos/MjAyNC0wMS0wMiAxMTo0MTowOA==_LP%20JAN%20Final%20Cover%202024.jpg"
+                alt="Front of men&#039;s Basic Tee in black."
+                class="h-full w-full object-cover object-center lg:h-full lg:w-full">
+            </div>
+            <div class="mt-4 flex justify-between">
+              <div>
+                <h3 class="text-sm text-gray-700">
+                  <a href="#" class="text-lg font-bold uppercase">
+                    <span aria-hidden="true" class="absolute inset-0 "></span>
+                    Life Positive
+                  </a>
+                </h3>
+                <p class="mt-1 text-sm text-gray-500">Motivation</p>
+              </div>
+              <p class="text-sm font-medium text-green-900 ">Free</p>
+            </div>
+          </div>
+          <div class="group relative">
+            <div
+              class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-96 ">
+              <img
+                src="https://www.lifepositive.com/photos/MjAyNC0wMS0wMiAxMTo0MTowOA==_LP%20JAN%20Final%20Cover%202024.jpg"
+                alt="Front of men&#039;s Basic Tee in black."
+                class="h-full w-full object-cover object-center lg:h-full lg:w-full">
+            </div>
+            <div class="mt-4 flex justify-between">
+              <div>
+                <h3 class="text-sm text-gray-700">
+                  <a href="#" class="text-lg font-bold uppercase">
+                    <span aria-hidden="true" class="absolute inset-0 "></span>
+                    Life Positive
+                  </a>
+                </h3>
+                <p class="mt-1 text-sm text-gray-500">Motivation</p>
+              </div>
+              <p class="text-sm font-medium text-green-900 ">Free</p>
+            </div>
+          </div>
+
+          <!-- More products... -->
+        </div>
+      </div>
+    </div>
+
+<!-- Month Div -->
+
+    <div>
+    
+
+  </section>
+
+
+
+  <!-- <section class="my-1 bg-no-repeat bg-cover" style="background-image: url(https://www.spiritmiracle.com/wp-content/uploads/2023/08/mindfulness.jpg);">
+    
+    <div class="flex justify-content justify-evenly text-gray-100 py-1" style="background: #9e5a23;">
+      <div>
+        <i class="fa fa-search-plus" aria-hidden="true"></i>
+      </div>
+      <div>
+        <i class="fa-solid fa-magnifying-glass-minus"></i>
+      </div>
+      <div>
+        <i class="fa-solid fa-volume-high"></i>
+      </div>
+      <div>
+        <i class="fa-solid fa-play"></i>
+      </div>
+      <div>
+        <i class="fa-solid fa-arrow-left"></i>
+      </div>
+
+      <input type="number" placeholder="Page number" class="text-center bg-opacity-40 bg-transparent"
+        onfocus="this.style.outline = 'none';" maxlength="3">
+
+      <div>
+        <i class="fa-solid fa-arrow-right"></i>
+      </div>
+      <div>
+        <i class="fa fa-table" aria-hidden="true"></i>
+      </div>
+      <div>
+        <i class="fa-solid fa-envelope"></i>
+      </div>
+      <div>
+        <i class="fas fa-share"></i>
+      </div>
+
+      <div>
+        <i class="fas fa-expand"></i>
+      </div>
+    </div>
+
+    <script src="turn.js"></script>
+
+    <div class=" justify-center items-center flex font-bold backdrop-filter backdrop-blur-lg backdrop-brightness-50 py-24" >
+
+      <div class="">
+
+              </p>
+            </div>
+          </div>
+
+          <div><span class="text">Page 2 </span>
+            <div class="content">
+              <h1 class="justify-start flex font-bold mt-4">Integrated youtube playback</h1>
+              <p>Ontology Of All Problems and Misery: Freedom from All Problems of Life - Introductory Session</p>
+              <p> Freedom from All Problems of Life</p>
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/F6-ayMeuLsg?si=tFOJOwgAkcIGVCgs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              <p>This video is of the introductory session of Swami Aaron’s Master Workshop titled “Ontology of All
+                Problems & Misery: Freedom from All Sufferings of Life”.
+              </p>
+            </div>
+          </div>
+
+          <div><span class="text">Page 3</span>
+            <div class="content">
+              <h1 class="justify-start flex font-bold mt-4">Middle of the Book</h1>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae eos ipsum sapiente reiciendis
+                excepturi
+                laborum, quis ducimus, aut vel veritatis illum incidunt commodi, maxime mollitia necessitatibus minus?
+                Quas,
+                eveniet eaque?</p>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae eos ipsum sapiente reiciendis
+                excepturi
+                laborum, quis ducimus, aut vel veritatis illum incidunt commodi, maxime mollitia necessitatibus minus?
+                Quas,
+                eveniet eaque?</p>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae eos ipsum sapiente reiciendis
+                excepturi
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae eos ipsum sapiente reiciendis
+                excepturi
+                laborum, quis ducimus, aut vel veritatis illum incidunt commodi, maxime mollitia necessitatibus minus?
+                Quas,
+                eveniet eaque?</p>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae eos ipsum sapiente reiciendis
+                excepturi
+                laborum, quis ducimus, aut vel veritatis illum incidunt commodi, maxime mollitia necessitatibus minus?
+                Quas,</p>
+            </div>
+          </div>
+          <div><span class="text">Page 4 </span>
+            <div class="content">
+              <h1 class="justify-start flex font-bold mt-4">The Cat</h1>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae eos ipsum sapiente reiciendis
+                excepturi
+                laborum, quis ducimus, aut vel veritatis illum incidunt commodi, maxime mollitia necessitatibus minus?
+                Quas,
+                eveniet eaque?</p> <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqsBYAC6go_7HES7F01l88beO1NPuP5b3LAg&usqp=CAU"
+                width="560" style="height: 365px;" alt="">
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae eos ipsum sapiente reiciendis
+                excepturi
+                laborum, quis ducimus, aut vel veritatis illum incidunt commodi, maxime mollitia necessitatibus minus?
+              </p>
+            </div>
+          </div>
+
+          <div><span class="text">Page 5 </span>
+            <div class="content">
+              <h1 class="justify-start flex font-bold mt-4">Integrated youtube playback</h1>
+              <p>Gain inspiration from an exclusive interview with a motivational speaker. Discover personal anecdotes,
+                success stories, and practical tips for overcoming challenges.</p> <iframe width="560" height="315"
+                src="https://www.youtube.com/embed/uc1r_mW5Qt4?si=ieRy6AfsO7U3aZxp" title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae eos ipsum sapiente reiciendis
+                excepturi
+                laborum, quis ducimus, aut vel veritatis illum incidunt commodi, maxime mollitia necessitatibus minus?
+                Quas,
+                eveniet eaque?</p>
+            </div>
+          </div>
+
+          <div><span class="text">Page 6 </span>
+            <div class="content">
+              <h1 class="justify-start flex font-bold mt-4">Added Support for Website Integration</h1>
+              <p>We can add websites for live preview so user can stay here instead of leaving our magazine</p> <iframe
+                width="560" height="315" src="https://ultimatebliss.org" title="Web Site View" frameborder="0"
+                allowfullscreen></iframe>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae eos ipsum sapiente reiciendis
+                excepturi
+                laborum, quis ducimus, aut vel veritatis illum incidunt commodi, maxime mollitia necessitatibus minus?
+                Quas,
+                eveniet eaque?</p>
+            </div>
+          </div>
+
+          <div
+            style="background-image: url(https://img.freepik.com/premium-photo/person-sitting-silent-meditation-with-view-beautiful-sunset_124507-190354.jpg);"
+            class="bg-no-repeat bg-cover bg-center"><span class="text"></span>
+            <div class="content">
+              <h1 class="justify-start flex font-bold mt-4 text-white ">End of Book</h1>
+              <p class="text-white mt-18">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae eos ipsum
+                sapiente reiciendis excepturi
+                laborum, quis ducimus, aut vel veritatis illum incidunt commodi, maxime mollitia necessitatibus minus?
+                Quas,
+                eveniet eaque?</p>
+              <p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae eos ipsum
+                sapiente
+                reiciendis excepturi
+                laborum, quis ducimus, aut vel veritatis illum incidunt commodi, maxime mollitia necessitatibus minus?
+                Quas,
+                eveniet eaque?</p>
+              <p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae eos ipsum
+                sapiente
+                reiciendis excepturi
+                laborum, quis ducimus, aut vel veritatis illum incidunt commodi, maxime mollitia necessitatibus minus?
+                Quas,
+                eveniet eaque?</p>
+            </div>
+          </div>
+        </div>
+
+        <script>
+          $(document).ready(function () {
+            $("#mag").turn();
+          });
+        </script>
+
+      </div>
+
+    </div>
+  </section> -->
+
+  <!-- Footer -->
+  <div id="footer"></div>
+  
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script>
+    var swiper = new Swiper('.swiper-container', {
+      slidesPerView: 1,
+      spaceBetween: 10,
+      navigation: {
+        nextEl: '.swiper-button-next-1',
+        prevEl: '.swiper-button-prev-1',
+      },
+      pagination: {
+        el: '.swiper-pagination-instance1',
+        clickable: true,
+      },
+    });
+  </script>
+  <script>
+    var swiper = new Swiper('.swiper-container', {
+      slidesPerView: 1,
+      spaceBetween: 10,
+      navigation: {
+        nextEl: '.swiper-button-next-2',
+        prevEl: '.swiper-button-prev-2',
+      },
+      pagination: {
+        el: '.swiper-pagination-instance2',
+        clickable: true,
+      },
+    });
+  </script>
+</body>
+
+</html>
