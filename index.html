@@ -6,8 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" /><!-- 
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" integrity="sha512-wnea99uKIC3TJF7v4eKk4Y+lMz2Mklv18+r4na2Gn1abDRPPOeef95xTzdwGD9e6zXJBteMIhZ1+68QC5byJZw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -205,12 +206,27 @@
       display: flex;
     }
 
-    .bar {
+    .caro-bar {
       width: 20px;
       height: 4px;
       background-color: #beffae94;
       margin: 0 5px;
       cursor: pointer;
+    }
+
+    .headline{
+      color: #ff0090;
+      font-weight: bolder;
+      line-height: 35px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .headline-sub{
+      color: #033D8B; 
+      font-weight: bold; 
+      line-height: 25px;
+    }
+    .bg-prime{
+      background-color: #CE03A0;
     }
 
   </style>
@@ -220,227 +236,53 @@
       $('#footer').load('footer.html');
     })
   </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+
 </head>
 
-<body>
-
+<body style="background-color: #E1FAF0;">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
   <!-- Header -->
+  <!-- #E1FAF0 -->
+  <div id="header"  style="background-color: #e6f9e8;"></div>
+  <!-- #e6f9e8 -->
+  <dir class="py-5" style="background-color:#E1FAF0;">
+    <h1 class="text-5xl text-center headline uppercase" >Ultimate Bliss Times</h1>
+    <p class="mt-2 text-center headline-sub">A free Spirituality & Wellness eMagazine by Ultimate Bliss Foundation</p>
+  </dir>
 
-  <div id="header"></div>
+  <section>
+    <nav class="flex flex-wrap justify-center bg-prime p-4 font-bold">
+      <a href="#" class="text-white hover:text-gray-200 w-full sm:w-auto mx-4 my-2 sm:my-0 border-r border-gray-400 pr-6">Workshops</a>
+      <a href="#" class="text-white hover:text-gray-200 w-full sm:w-auto mx-4 my-2 sm:my-0 border-r border-gray-400 pr-6">Events</a> 
+      <a href="#" class="text-white hover:text-gray-200 w-full sm:w-auto mx-4 my-2 sm:my-0 border-r border-gray-400 pr-6">Education</a> 
+      <a href="#" class="text-white hover:text-gray-200 w-full sm:w-auto mx-4 my-2 sm:my-0 border-r border-gray-400 pr-6">Spiritual Healers</a>
+      <a href="#" class="text-white hover:text-gray-200 w-full sm:w-auto mx-4 my-2 sm:my-0 border-r border-gray-400 pr-6">Therapists</a>
+      <a href="#" class="text-white hover:text-gray-200 w-full sm:w-auto mx-4 my-2 sm:my-0 border-r border-gray-400 pr-6">Trainers</a>
+      <a href="#" class="text-white hover:text-gray-200 w-full sm:w-auto mx-4 my-2 sm:my-0 border-r border-gray-400 pr-6">Wellness Centres</a>
+      <a href="#" class="text-white hover:text-gray-200 w-full sm:w-auto mx-4 my-2 sm:my-0 border-r border-gray-400 pr-6">Clinics</a>
+      <a href="#" class="text-white hover:text-gray-200 w-full sm:w-auto mx-4 my-2 sm:my-0 border-r border-gray-400 pr-6">Beauty Saloon & Spa</a>
+      <a href="#" class="text-white hover:text-gray-200 w-full sm:w-auto mx-4 my-2 sm:my-0 border-r border-gray-400 pr-6">Tarot Readers</a>
+      <a href="#" class="text-white hover:text-gray-200 w-full sm:w-auto mx-4 my-2 sm:my-0 border-r border-gray-400 pr-6">Astrologers, Numerologists & Palmists</a>
+      <a href="#" class="text-white hover:text-gray-200 w-full sm:w-auto mx-4 my-2 sm:my-0 border-r border-gray-400 pr-6">Travel Agency</a>
+      <a href="#" class="text-white hover:text-gray-200 w-full sm:w-auto mx-4 my-2 sm:my-0 border-r border-gray-400 pr-6">Hotels, Resorts & Homestay</a>
+      <a href="#" class="text-white hover:text-gray-200 w-full sm:w-auto mx-4 my-2 sm:my-0 border-r border-gray-400 pr-6">Restaurants & Café</a>
+      <a href="#" class="text-white hover:text-gray-200 w-full sm:w-auto mx-4 my-2 sm:my-0 border-r border-gray-400 pr-6">Luxury Products</a>
+      <a href="#" class="text-white hover:text-gray-200 w-full sm:w-auto mx-4 my-2 sm:my-0 border-r border-gray-400 pr-6">Shopping</a>
+      <a href="#" class="text-white hover:text-gray-200 w-full sm:w-auto mx-4 my-2 sm:my-0 border-r border-gray-400 pr-6">Exclusive Interviews</a>
+      <a href="#" class="text-white hover:text-gray-200 w-full sm:w-auto mx-4 my-2 sm:my-0">Books</a>
+  </nav>
+  </section>
+  <div><br><br></div>
+  <!-- <dir style="background: #CE03A0;">
+    <h1 class="text-3xl font-extrabold text-white text-center">Ultimate Bliss Times</h1>
+  </dir> -->
 
-  <script src="https://unpkg.com/@themesberg/flowbite@1.1.1/dist/flowbite.bundle.js"></script>
+  <!-- <script src="https://unpkg.com/@themesberg/flowbite@1.1.1/dist/flowbite.bundle.js"></script> -->
+
 
   <!-- Read Magazine -->
-  <section id="mgz" class="my-1 "
-    style="background-image: url(https://static.vecteezy.com/system/resources/previews/024/409/662/large_2x/magical-portal-under-an-ancient-stone-arch-located-in-the-jungle-wild-forest-blue-glow-ancient-stone-buildings-cultural-monuments-teleportation-to-parallel-universes-3d-rendering-generate-ai-free-photo.jpg);">
-
-    <div class="flex justify-content justify-evenly text-gray-100 py-1" style="background: #CE03A0;">
-      <div>
-        <i class="fa fa-search-plus" aria-hidden="true"></i>
-      </div>
-      <div>
-        <i class="fa-solid fa-magnifying-glass-minus"></i>
-      </div>
-      <div>
-        <i class="fa-solid fa-volume-high"></i>
-      </div>
-      <div>
-        <i class="fa-solid fa-play"></i>
-      </div>
-      <div>
-        <i class="fa-solid fa-arrow-left"></i>
-      </div>
-
-      <input type="number" placeholder="Page number" class="text-center bg-opacity-40 bg-transparent"
-        onfocus="this.style.outline = 'none';" maxlength="3">
-
-      <div>
-        <i class="fa-solid fa-arrow-right"></i>
-      </div>
-      <div>
-        <i class="fa fa-table" aria-hidden="true"></i>
-      </div>
-      <div>
-        <i class="fa-solid fa-envelope"></i>
-      </div>
-      <div>
-        <i class="fas fa-share"></i>
-      </div>
-
-      <div>
-        <i class="fas fa-expand"></i>
-      </div>
-    </div>
-
-    <script src="turn.js"></script>
-
-    <div
-      class=" justify-start hover:justify-center items-center flex font-bold backdrop-filter backdrop-blur-lg backdrop-brightness-50 py-24">
-
-      <button id="npb" class="text-green-50 absolute left-20 p-3 px-4 rounded-full hover:text-green-100"
-        style="background:#CE03A0;"> <i class="fa-solid fa-less-than"></i></button>
-
-
-      <div class="" id="myDiv">
-
-        <!-- Magazine -->
-
-
-        <div id="magazine">
-
-          <!-- Pages -->
-
-          <div style="background-image: url('Cover\ page\ Ultimate\ Bliss\ Times.webp')"
-            class="bg-no-repeat bg-cover bg-center"><span class="text"></span>
-            <div class="content text-4xl flex items-center mt-18 font-bold">
-              <!-- <h1 class="text-white filter drop-shadow text-6xl">The Ultimate Bliss</h1>
-              <pc class="mt-16">
-                </p>
-                <p
-                  class="text-sm flex text-white font-normal filter drop-shadow bg-black bg-opacity-10 text-justify p-5 mt-96">
-                  Explore the mystical realms of spirituality as we delve into practices that foster a deep connection
-                  with the divine. From ancient traditions to modern interpretations, discover the pathways to spiritual
-                  enlightenment.</p> -->
-            </div>
-          </div>
-
-          <div><span class="text">Page 2 </span>
-            <div class="content">
-              <h1 class="justify-start flex font-bold mt-4">Introduction</h1>
-              <p>Welcome to "The Ultimate Bliss," a magazine dedicated to spiritual exploration, motivation, healing,
-                and
-                therapy. In each issue, we embark on a journey to discover profound insights, uplifting stories, and
-                transformative editorials that nurture the mind, body, and soul.</p> <img
-                src="https://miro.medium.com/v2/resize:fit:4096/1*3mYIJgfwP75nx9A0BbvDxQ.png" width="560" height="315"
-                alt="">
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae eos ipsum sapiente reiciendis
-                excepturi
-                laborum, quis ducimus, aut vel veritatis illum incidunt commodi, maxime mollitia necessitatibus minus?
-              </p>
-            </div>
-          </div>
-
-          <div><span class="text">Page 3 </span>
-            <div class="content">
-              <h1 class="justify-start flex font-bold mt-4">Integrated youtube playback</h1>
-              <p>Ontology Of All Problems and Misery: Freedom from All Problems of Life - Introductory Session</p>
-              <iframe width="560" height="315" src="https://www.youtube.com/embed/q69X1udWov8?si=yPyXe-IH6ey2hCQX"
-                title="YouTube video player" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen></iframe>
-              <p>This video is of the introductory session of Swami Aaron’s Master Workshop titled “Ontology of All
-                Problems & Misery: Freedom from All Sufferings of Life”.
-              </p>
-            </div>
-          </div>
-
-          <div><span class="text">Page 4</span>
-            <div class="content">
-              <h1 class="justify-start flex font-bold mt-4">Middle of the Book</h1>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae eos ipsum sapiente reiciendis
-                excepturi
-                laborum, quis ducimus, aut vel veritatis illum incidunt commodi, maxime mollitia necessitatibus minus?
-                Quas,
-                eveniet eaque?</p>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae eos ipsum sapiente reiciendis
-                excepturi
-                laborum, quis ducimus, aut vel veritatis illum incidunt commodi, maxime mollitia necessitatibus minus?
-                Quas,
-                eveniet eaque?</p>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae eos ipsum sapiente reiciendis
-                excepturi
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae eos ipsum sapiente reiciendis
-                excepturi
-                laborum, quis ducimus, aut vel veritatis illum incidunt commodi, maxime mollitia necessitatibus minus?
-                Quas,
-                eveniet eaque?</p>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae eos ipsum sapiente reiciendis
-                excepturi
-                laborum, quis ducimus, aut vel veritatis illum incidunt commodi, maxime mollitia necessitatibus minus?
-                Quas,</p>
-            </div>
-          </div>
-          <div><span class="text">Page 5 </span>
-            <div class="content">
-              <h1 class="justify-start flex font-bold mt-4">The Cat</h1>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae eos ipsum sapiente reiciendis
-                excepturi
-                laborum, quis ducimus, aut vel veritatis illum incidunt commodi, maxime mollitia necessitatibus minus?
-                Quas,
-                eveniet eaque?</p> <img
-                src="https://i.natgeofe.com/n/4cebbf38-5df4-4ed0-864a-4ebeb64d33a4/NationalGeographic_1468962_3x2.jpg?w=1638&h=1092"
-                width="560" height="315" alt="">
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae eos ipsum sapiente reiciendis
-                excepturi
-                laborum, quis ducimus, aut vel veritatis illum incidunt commodi, maxime mollitia necessitatibus minus?
-              </p>
-            </div>
-          </div>
-
-          <div><span class="text">Page 6 </span>
-            <div class="content">
-              <h1 class="justify-start flex font-bold mt-4">Integrated youtube playback</h1>
-              <p>Gain inspiration from an exclusive interview with a motivational speaker. Discover personal anecdotes,
-                success stories, and practical tips for overcoming challenges.</p> <iframe width="560" height="315"
-                src="https://www.youtube.com/embed/uc1r_mW5Qt4?si=ieRy6AfsO7U3aZxp" title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen></iframe>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae eos ipsum sapiente reiciendis
-                excepturi
-                laborum, quis ducimus, aut vel veritatis illum incidunt commodi, maxime mollitia necessitatibus minus?
-                Quas,
-                eveniet eaque?</p>
-            </div>
-          </div>
-
-          <div><span class="text">Page 7 </span>
-            <div class="content">
-              <h1 class="justify-start flex font-bold mt-4">Added Support for Website Integration</h1>
-              <p>We can add websites for live preview so user can stay here instead of leaving our magazine</p> <iframe
-                width="560" height="315" src="https://ultimatebliss.org" title="Web Site View" frameborder="0"
-                allowfullscreen></iframe>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae eos ipsum sapiente reiciendis
-                excepturi
-                laborum, quis ducimus, aut vel veritatis illum incidunt commodi, maxime mollitia necessitatibus minus?
-                Quas,
-                eveniet eaque?</p>
-            </div>
-          </div>
-
-          <div
-            style="background-image: url(https://img.freepik.com/premium-photo/end-tunnel-dark-mystical-stairs-fairy-fantasy-forest-digital-illustration-ai_742252-5404.jpg);"
-            class="bg-no-repeat bg-cover bg-center"><span class="text"></span>
-            <div class="content">
-              <h1 class="justify-start flex font-bold mt-4 text-white mt-52">End of Book</h1>
-              <p class="text-white mt-18">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae eos ipsum
-                sapiente reiciendis excepturi
-                laborum, quis ducimus, aut vel veritatis illum incidunt commodi, maxime mollitia necessitatibus minus?
-                Quas,
-                eveniet eaque?</p>
-              <p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae eos ipsum
-                sapiente
-                reiciendis excepturi
-                laborum, quis ducimus, aut vel veritatis illum incidunt commodi, maxime mollitia necessitatibus minus?
-                Quas,
-                eveniet eaque?</p>
-              <p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae eos ipsum
-                sapiente
-                reiciendis excepturi
-                laborum, quis ducimus, aut vel veritatis illum incidunt commodi, maxime mollitia necessitatibus minus?
-                Quas,
-                eveniet eaque?</p>
-            </div>
-          </div>
-        </div>
-
-        <script>
-          $(document).ready(function () {
-            $("#magazine").turn();
-          });
-        </script>
-
-      </div>
+  
 
       <!-- <script>
         const myDiv = document.getElementById("myDiv");
@@ -451,145 +293,161 @@
       </script> -->
 
 
-      <button id="npb" class="text-green-50 absolute right-20 p-3 px-4 rounded-full hover:text-green-100"
-        style="background:#CE03A0 ;"> <i class="fa-solid fa-greater-than"></i></button>
+      <!-- <button id="npb" class="text-green-50 absolute right-20 p-3 px-4 rounded-full hover:text-green-100"
+        style="background:#CE03A0 ;"> <i class="fa-solid fa-greater-than"></i> wedew</button>
+
+    </div> -->
+
+
+    <!--  -->
+      
+    <!-- Quotation -->
+    
+<section class="p-5" style=" background-color: #CE03A0;">
+<div class="bg-green-500 w-6/12 mx-auto">
+  <div id="default-carousel" class="relative w-full h-80" data-carousel="slide"  data-bs-interval="9000" style="height: 32rem; background-color: #CE03A0;">
+    <!-- Carousel wrapper -->
+    <div class="relative h-full overflow-hidden rounded- md:h-96"  style="height: 32rem;">
+         
+        <!-- Item 1 -->
+        <div class="hidden duration-1000 ease-in-out" data-carousel-item>
+          <div class="absolute inset-0 flex items-center justify-center">
+              <!-- Left side content -->
+              <div class="absolute left-16 z-10 p-4 text-black font-semibold text-center justify-center ml-auto">
+                  <!-- Image -->
+                  <img src="carousel/swami-aaron.webp" class="w-36 h-28 rounded-sm mx-auto" alt="Profile Image">
+                  <!-- Text -->
+                  <h1 class="text-xs my-4">Swami Aaron</h1>
+                  <h1 class="text-xs my-4">(Dr. Aaron Thomas)</h1>
+                  <h1 class="text-xs my-4">Author | Psychotherapist | Spiritual Master</h1>
+              </div>
+              <!-- Right side content -->
+              <div class="absolute right-5 z-10 p-4 text-black font-medium mr-auto text-sm" style="width: 35rem;">
+                  <!-- Quotes -->
+                  <blockquote>
+                      <p>&quot;Almost everyone in this world wants to achieve a life with lots of money, wealth, power, fame, all luxuries, good health, soulful relationship, well-settled children and relatives, world tour and other beautiful experiences.</p><br>
+                      <p>Suppose a person achieves all these things, then, is it possible that he or she will remain tremendously happy for whole life, he or she will never have any problem in the entire life?</p><br>
+                      <p>The answer is “No”. It means what? That we need to explore something more than just the worldly knowledge and possessions.</p><br>
+                      <p>I share that knowledge of beyond this world which can make a person free from mundane problems of life and can facilitate the realisation of Eternal Infinite Life inherent with Ultimate Bliss.&quot;</p><br>
+                      <p>- Swami Aaron (Dr. Aaron Thomas)</p>
+                    </blockquote>
+              </div>
+              <!-- Image -->
+              <img src="carousel/11.jpg" class="absolute object-fill block w-full h-full" alt="...">
+          </div>
+      </div>
+
+        <!-- Item 2 -->
+        <div class="hidden duration-100 ease-in-out" data-carousel-item>
+          <div class="absolute inset-0 flex items-center justify-center">
+              <!-- Left side content -->
+              <div class="absolute left-16 z-10 p-4 text-black font-semibold text-center justify-center ml-auto">
+                  <!-- Image -->
+                  <img src="carousel/swami-aaron.webp" class="w-36 h-28 rounded-sm mx-auto" alt="Profile Image">
+                  <!-- Text -->
+                  <h1 class="text-xs my-4">Swami Aaron</h1>
+                  <h1 class="text-xs my-4">(Dr. Aaron Thomas)</h1>
+                  <h1 class="text-xs my-4">Author | Psychotherapist | Spiritual Master</h1>
+              </div>
+              <!-- Right side content -->
+              <div class="absolute right-5 z-10 p-4 text-black font-medium mr-auto text-sm" style="width: 35rem;">
+                  <!-- Quotes -->
+                  <blockquote>
+                      <p>&quot;If you are not aware of the Ultimate Truth, the Reality behind all visible realities, then no matter you are rich or poor, powerful or weak, you shall always remain prone to misery and sufferings in life.</p><br>
+                      <p>I can make you explore life beyond death, a life free from all misery and sufferings, a life marked with Eternity, Infinity & Ultimate Bliss.&quot;</p><br>
+                      <p>- Swami Aaron (Dr. Aaron Thomas)</p>
+                    </blockquote>
+              </div>
+              <!-- Image -->
+              <img src="carousel/22.jpg" class="absolute object-fill block w-full h-full" alt="...">
+          </div>
+      </div>
+
+        <!-- Item 3 -->
+        <div class="hidden duration-1000 ease-in-out" data-carousel-item>
+          <div class="absolute inset-0 flex items-center justify-center">
+              <!-- Left side content -->
+              <div class="absolute left-16 z-10 p-4 text-black font-semibold text-center justify-center ml-auto">
+                  <!-- Image -->
+                  <img src="carousel/swami-aaron.webp" class="w-36 h-28 rounded-sm mx-auto" alt="Profile Image">
+                  <!-- Text -->
+                  <h1 class="text-xs my-4">Swami Aaron</h1>
+                  <h1 class="text-xs my-4">(Dr. Aaron Thomas)</h1>
+                  <h1 class="text-xs my-4">Author | Psychotherapist | Spiritual Master</h1>
+              </div>
+              <!-- Right side content -->
+              <div class="absolute right-5 z-10 p-4 text-black font-medium mr-auto text-sm" style="width: 35rem;">
+                  <!-- Quotes -->
+                  <blockquote>
+                      <p>&quot;Which is the biggest happiness you have experienced in your life so far?</p><br>
+                      <p>Food? Sex? Wealth? Power? Fame? Praise? World Tour? Beautiful Nature? Love? Soulful Relationship? Well Settled Children and Relatives?</p><br>
+                      <p>I am not against all these happiness, but I can show you the path to even bigger happiness than all this as how to experience the State of Pure Awakened Silence, the Highest Consciousness, the Ultimate Intelligence, the Ultimate Bliss of Existence.</p><br>
+                      <p>Nothing of the World can match this experience of Pure Pristine Sheer Bliss!&quot;</p><br>
+                      <p>- Swami Aaron (Dr. Aaron Thomas)</p>
+                    </blockquote>
+              </div>
+              <!-- Image -->
+              <img src="carousel/33.jpg" class="absolute object-fill block w-full h-full" alt="...">
+          </div>
+      </div>
+
+        <!-- Item 4 -->
+        <div class="hidden duration-9000 ease-in-out" data-carousel-item>
+          <div class="absolute inset-0 flex items-center justify-center">
+              <!-- Left side content -->
+              <div class="absolute left-16 z-10 p-4 text-black font-semibold text-center justify-center ml-auto">
+                  <!-- Image -->
+                  <img src="carousel/swami-aaron.webp" class="w-36 h-28 rounded-sm mx-auto" alt="Profile Image">
+                  <!-- Text -->
+                  <h1 class="text-xs my-4">Swami Aaron</h1>
+                  <h1 class="text-xs my-4">(Dr. Aaron Thomas)</h1>
+                  <h1 class="text-xs my-4">Author | Psychotherapist | Spiritual Master</h1>
+              </div>
+              <!-- Right side content -->
+              <div class="absolute right-5 z-10 p-4 text-black font-medium mr-auto text-sm" style="width: 35rem;">
+                  <!-- Quotes -->
+                  <blockquote>
+                      <p>&quot;If you are not blissful, then what is the use of your all knowledge, skills, beliefs, wealth, power, pride, fame, family, society etc.?</p><br>
+                      <p>So, come to me. I will teach you how to be free from all problems of mundane life and how to realize the Ultimate Bliss of Existence.&quot;</p><br>
+                      <p>- Swami Aaron (Dr. Aaron Thomas)</p>
+                    </blockquote>
+              </div>
+              <!-- Image -->
+              <img src="carousel/44.jpg" class="absolute object-fill block w-full h-full" alt="...">
+          </div>
+      </div>
 
     </div>
-  </section>
-
-  <!-- Quotation -->
-  <section class=" justify-center items-center flex  font-bold text-green-700">
-    <!-- &qint; Quotation Here &qint; -->
-
-    <div class="relative flex flex-col" style="width: 100%;   background-color: #CE03A0;;margin-top: -0.3rem;; ">
-      <div class="absolute inset-x-0 bottom-0">
-        <svg viewBox="0 0 224 12" fill="#f0f0f0" class="w-full -mb-1" preserveAspectRatio="none">
-          <path
-            d="M0,0 C48.8902582,6.27314026 86.2235915,9.40971039 112,9.40971039 C137.776408,9.40971039 175.109742,6.27314026 224,0 L224,12.0441132 L0,12.0441132 L0,0 Z"
-            sty>
-          </path>
-        </svg>
-      </div>
-      <div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
-        <div class="relative max-w-2xl sm:mx-auto sm:max-w-xl md:max-w-3xl sm:text-center">
-          <!-- <h2 class="mb-6 font-sans text-3xl text-center font-bold tracking-tight text-white sm:text-4xl sm:leading-none">
-              Inroducing flipbook for elite community
-            </h2> -->
-          <div class="text-green-50" style="    position: relative;
-          left: -31rem;
-          bottom: -6rem;">
-            <img src="swami aaron.webp" class="w-52 rounded-md mx-auto" alt="swami_aaron_thomas">
-            <h1 class="font-medium my-1">Swami Aaron</h1>
-            <h1 class="font-medium my-1">(Dr. Aaron Thomas)</h1>
-            <h1 class="font-medium my-1">Author | Psychotherapist | Spiritual Master</h1>
-          </div>
-
-
-          
-          <div id="quote-container" class="text-green-100" style="    position: relative;
-          top: -10rem;">
-
-            <div class="quote active">
-              <p class="mb-6 text-base text-green-100 md:text-lg whitespace-">
-                <span class="text-2xl">&quot;</span> If you are not blissful, then what is the use of your all knowledge,
-                skills, beliefs, wealth, power, pride, fame, family, society etc.?
-                <br><br>
-                So, come to me. I will teach you how to be free from all problems of
-                mundane life and how to realize the Ultimate Bliss of Existence. <span class="text-2xl">&quot;</span>
-                <br><br>
-                - Swami Aaron (Dr. Aaron Thomas)
-              </p>
-            </div>
-
-            <div class="quote">
-              <p class="mb-6 text-base text-green-100 md:text-lg whitespace-">
-                <span class="text-2xl">&quot;</span> “Which is the biggest happiness you have experienced in your life so far?
-                <br><br>
-                Nothing of the World can match this experience of Pure Pristine Sheer Bliss!” <span class="text-2xl">&quot;</span>
-                <br><br>
-                - Swami Aaron (Dr. Aaron Thomas)
-              </p>
-            </div>
-
-            <div class="quote">
-              <p class="mb-6 text-base text-green-100 md:text-lg whitespace-">
-                <span class="text-2xl">&quot;</span> Almost everyone in this world wants to achieve a life with lots of money, wealth, power, fame, all luxuries, good health, soulful relationship, well-settled children and relatives, world tour and other beautiful experiences.
-                
-                <br><br>
-                - Swami Aaron (Dr. Aaron Thomas)
-              </p>
-            </div>
-            
-            <div class="quote">
-              <p class="mb-6 text-base text-green-100 md:text-lg whitespace-">
-                <span class="text-2xl">&quot;</span> I share that knowledge of beyond this world which can make a person free from mundane problems of life and can facilitate the realisation of Eternal Infinite Life inherent with Ultimate Bliss.
-                
-                <br><br>
-                - Swami Aaron (Dr. Aaron Thomas)
-              </p>
-            </div>
-          </div>
-        
-          <div id="bar-container" class="flex justify-center mb-5">
-            <div class="bar" onclick="showQuote(0)"></div>
-            <div class="bar" onclick="showQuote(1)"></div>
-            <div class="bar" onclick="showQuote(2)"></div>
-            <div class="bar" onclick="showQuote(3)"></div>
-          </div>
-        
-        
-          <script>
-            let currentIndex = 0;
-        
-            function showQuote(index) {
-              // Hide the current active quote
-              document.querySelector('.quote.active').classList.remove('active');
-        
-              // Show the selected quote
-              document.querySelectorAll('.quote')[index].classList.add('active');
-        
-              // Update the currentIndex
-              currentIndex = index;
-            }
-        
-            function changeQuote() {
-              // Increment index and show the next quote
-              currentIndex = (currentIndex + 1) % 4;
-              showQuote(currentIndex);
-            }
-        
-            // Change quote every 5 seconds (adjust as needed)
-            setInterval(changeQuote, 5000);
-          </script>
-
-          <!-- <form class="flex flex-col items-center w-full mb-4 md:flex-row md:px-16">
-                <input placeholder="Search something.." required="" type="text" class="flex-grow w-full h-12 px-4 mb-3 text-white transition duration-200 border-2 border-transparent rounded appearance-none md:mr-2 md:mb-0 bg-deep-purple-900 focus:border-teal-accent-700 focus:outline-none focus:shadow-outline">
-                <a href="/" class="inline-flex items-center justify-center w-full h-12 px-6 font-semibold tracking-wide text-gray-200 transition duration-200 rounded shadow-md md:w-auto hover:text-deep-purple-900 bg-teal-accent-400 hover:bg-teal-accent-700 focus:shadow-outline focus:outline-none">
-                    Search
-                </a>
-            </form> 
-            <p class="max-w-md mb-10 text-xs tracking-wide text-indigo-100 sm:text-sm sm:mx-auto md:mb-16">
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque.
-            </p>-->
-
-          <a href="/" aria-label="Scroll down"
-            class="flex items-center justify-center w-10 h-10 mx-auto text-white duration-300 transform border border-gray-400 rounded-full hover:text-teal-accent-400 hover:border-teal-accent-400 hover:shadow hover:scale-110">
-            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="white">
-              <path
-                d="M10.293,3.293,6,7.586,1.707,3.293A1,1,0,0,0,.293,4.707l5,5a1,1,0,0,0,1.414,0l5-5a1,1,0,1,0-1.414-1.414Z">
-              </path>
+    <!-- Slider indicators -->
+    <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse" style="margin-top: 200px;">
+        <button type="button" class="w-12 h-2 rounded-lg" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
+        <button type="button" class="w-12 h-2 rounded-lg" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
+        <button type="button" class="w-12 h-2 rounded-lg" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
+        <button type="button" class="w-12 h-2 rounded-lg" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button><!-- 
+        <button type="button" class="w-12 h-2 rounded-lg" aria-current="false" aria-label="Slide 5" data-carousel-slide-to="4"></button> -->
+    </div>
+    <!-- Slider controls -->
+    <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+        <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+            <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
             </svg>
-          </a>
-        </div>
-      </div>
-    </div>
+            <span class="sr-only">Previous</span>
+        </span>
+    </button>
+    <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+        <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+            <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+            </svg>
+            <span class="sr-only">Next</span>
+        </span>
+    </button>
+</div>
+</div>
+</section>
 
-  </section>
-
-  <!-- Previous -->
-
-
-
+  <!-- Previous Issue-->
   <section class="p-5">
  
     <div >
@@ -618,7 +476,7 @@
                 </h3>
                 <p class="mt-1 text-sm text-gray-500">Motivation</p>
               </div>
-              <p class="text-sm font-medium text-green-900 ">Free</p>
+              <p class="text-sm text-xs text-green-900 ">Free</p>
             </div>
           </div>
 
@@ -640,7 +498,7 @@
                 </h3>
                 <p class="mt-1 text-sm text-gray-500">Motivation</p>
               </div>
-              <p class="text-sm font-medium text-green-900 ">Free</p>
+              <p class="text-sm text-xs text-green-900 ">Free</p>
             </div>
           </div>
 
@@ -662,7 +520,7 @@
                 </h3>
                 <p class="mt-1 text-sm text-gray-500">Motivation</p>
               </div>
-              <p class="text-sm font-medium text-green-900 ">Free</p>
+              <p class="text-sm text-xs text-green-900 ">Free</p>
             </div>
           </div>
 
@@ -684,7 +542,7 @@
                 </h3>
                 <p class="mt-1 text-sm text-gray-500">Motivation</p>
               </div>
-              <p class="text-sm font-medium text-green-900 ">Free</p>
+              <p class="text-sm text-xs text-green-900 ">Free</p>
             </div>
           </div>
           
@@ -706,7 +564,7 @@
                 </h3>
                 <p class="mt-1 text-sm text-gray-500">Motivation</p>
               </div>
-              <p class="text-sm font-medium text-green-900 ">Free</p>
+              <p class="text-sm text-xs text-green-900 ">Free</p>
             </div>
           </div>
           <div class="group relative">
@@ -727,7 +585,7 @@
                 </h3>
                 <p class="mt-1 text-sm text-gray-500">Motivation</p>
               </div>
-              <p class="text-sm font-medium text-green-900 ">Free</p>
+              <p class="text-sm text-xs text-green-900 ">Free</p>
             </div>
           </div>
           <div class="group relative">
@@ -748,7 +606,7 @@
                 </h3>
                 <p class="mt-1 text-sm text-gray-500">Motivation</p>
               </div>
-              <p class="text-sm font-medium text-green-900 ">Free</p>
+              <p class="text-sm text-xs text-green-900 ">Free</p>
             </div>
           </div>
           <div class="group relative">
@@ -769,7 +627,7 @@
                 </h3>
                 <p class="mt-1 text-sm text-gray-500">Motivation</p>
               </div>
-              <p class="text-sm font-medium text-green-900 ">Free</p>
+              <p class="text-sm text-xs text-green-900 ">Free</p>
             </div>
           </div>
 
